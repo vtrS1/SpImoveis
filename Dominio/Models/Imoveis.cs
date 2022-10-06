@@ -1,6 +1,6 @@
-using System.Reflection.Metadata.Ecma335;
+using Dominio.Models;
 
-namespace Web.Models;
+namespace Dominio.Models;
 
 public class Imoveis
 {
@@ -9,5 +9,5 @@ public class Imoveis
     public string Bairro { get; set; }
     public string Valor { get; set; }
     public string Padrao { get; set; }
-    public Cliente Cliente { get; set; }
+    public Clientes Cliente { get; set; }
 }

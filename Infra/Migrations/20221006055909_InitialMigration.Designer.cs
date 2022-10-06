@@ -5,15 +5,15 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Web.Contexto;
+using Dominio.Contexto;
 
 #nullable disable
 
 namespace Web.Migrations
 {
     [DbContext(typeof(SpContexto))]
-    [Migration("20221006172322_AddValorNullNaColunaPadraoInteresse")]
-    partial class AddValorNullNaColunaPadraoInteresse
+    [Migration("20221006055909_InitialMigration")]
+    partial class InitialMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -40,6 +40,7 @@ namespace Web.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PadraoInteresse")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Telefone")

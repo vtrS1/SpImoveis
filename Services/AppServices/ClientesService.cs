@@ -1,9 +1,9 @@
 using System.Linq.Expressions;
+using Dominio.Contexto;
+using Dominio.Models;
 using Microsoft.EntityFrameworkCore;
 using Services.Helpers;
 using Services.Interfaces;
-using Web.Contexto;
-using Web.Models;
 using X.PagedList;
 
 namespace Services.AppServices;
@@ -17,10 +17,10 @@ public class ClientesService: IClientesServices
         _spContexto = spContexto;
     }
     
-    public async Task<IPagedList<Cliente>> ListarPaginado(int? pagina = 1, string parametroDeBusca = "")
+    public async Task<IPagedList<Clientes>> ListarPaginado(int? pagina = 1, string parametroDeBusca = "")
     {
-        Expression<Func<Cliente, bool>> condicaoDeBusca = null;
-        IPagedList<Cliente> usuarios;
+        Expression<Func<Clientes, bool>> condicaoDeBusca = null;
+        IPagedList<Clientes> usuarios;
 
         if (!string.IsNullOrEmpty(parametroDeBusca))
             condicaoDeBusca = (x=>

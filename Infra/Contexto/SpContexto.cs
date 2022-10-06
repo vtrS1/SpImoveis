@@ -1,7 +1,8 @@
+using Dominio.Models;
 using Microsoft.EntityFrameworkCore;
-using Web.Models;
 
-namespace Web.Contexto;
+
+namespace Dominio.Contexto;
 
 public class SpContexto : DbContext 
 {
@@ -10,6 +11,6 @@ public class SpContexto : DbContext
         
     }
     public DbSet<Imoveis> Imoveis { get; set; }
-    public DbSet<Cliente> Clientes { get; set; }
+    public DbSet<Clientes> Clientes { get; set; }
 
 }

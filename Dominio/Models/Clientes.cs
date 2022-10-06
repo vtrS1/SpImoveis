@@ -1,6 +1,6 @@
-namespace Web.Models;
+namespace Dominio.Models;
 
-public class Cliente
+public class Clientes
 {
     public Guid Id { get; set; }
     public string Nome { get; set; }

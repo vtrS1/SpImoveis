@@ -8,13 +8,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ce8c7a9-4dd3-4a77-af4b-e104997deb83" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Services/AppServices/ClientesService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Services/Helpers/Paginacao.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Services/Interfaces/IClientesServices.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Services/Services.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SpImoveis/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpImoveis/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpImoveis.sln" beforeDir="false" afterPath="$PROJECT_DIR$/SpImoveis.sln" afterDir="false" />
+    <list default="true" id="0ce8c7a9-4dd3-4a77-af4b-e104997deb83" name="Changes" comment="Adiciona Services">
+      <change afterPath="$PROJECT_DIR$/Web/Controllers/ClientesController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/Services.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Services/Services.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web/Web.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Web/Web.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -102,7 +98,7 @@
       <updated>1665032087863</updated>
       <workItem from="1665032095858" duration="3929000" />
       <workItem from="1665071769287" duration="358000" />
-      <workItem from="1665085556205" duration="1973000" />
+      <workItem from="1665085556205" duration="2277000" />
     </task>
     <task id="LOCAL-00001" summary="initiaç commit">
       <created>1665032124287</created>
@@ -118,7 +114,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665036057139</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Adiciona Services">
+      <created>1665087862718</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1665087862718</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,6 +145,7 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="initiaç commit" />
     <MESSAGE value="Initial Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial Commit" />
+    <MESSAGE value="Adiciona Services" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adiciona Services" />
   </component>
 </project>
