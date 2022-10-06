@@ -1,7 +1,14 @@
+using Microsoft.EntityFrameworkCore;
+using Web.Contexto;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<SpContexto>
+(Options => Options.UseSqlServer(
+    "Data Source=DESKTOP-SPEQ2M5;Initial Catalog=spimoveis;Integrated Security=True;MultipleActiveResultSets=True;TrustServerCertificate=True"));
 
 var app = builder.Build();
 
