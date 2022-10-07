@@ -8,10 +8,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ce8c7a9-4dd3-4a77-af4b-e104997deb83" name="Changes" comment="Adiciona Services">
-      <change afterPath="$PROJECT_DIR$/Web/Controllers/ClientesController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Services/Services.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Services/Services.csproj" afterDir="false" />
+    <list default="true" id="0ce8c7a9-4dd3-4a77-af4b-e104997deb83" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Services/Extensions/GetPaged.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Services/Extensions/LambdaExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Services/Extensions/PagedResult.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Services/Extensions/PagedResultBase.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Services/Extensions/ServiceCollectionExtension.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Services/Helpers/ExpressionRebinder.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web/Pages/Clientes/Index.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web/Pages/Clientes/Index.cshtml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web/Pages/_ViewImports.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web/Pages/_ViewStart.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web/ViewsModels/ClientesViewModels/ListarClientesViewModels.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SpImoveis/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpImoveis/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SpImoveis/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpImoveis/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SpImoveis/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpImoveis/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dominio/Dominio.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Dominio/Dominio.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dominio/Models/Clientes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Dominio/Models/Clientes.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/AppServices/ClientesService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/AppServices/ClientesService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/Interfaces/IClientesServices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/Interfaces/IClientesServices.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/Controllers/ClientesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Web/Controllers/ClientesController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Web/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/Views/_ViewImports.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Web/Views/_ViewImports.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web/Web.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Web/Web.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Web/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +39,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f2122ffe89ab4a84823f3ac4569b2aa51b39a8/37/6c8c5cd7/View.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8d3195c9ba918c7860b66ce3965d4b9f173653cfea2479e8bb842d3513a89b/RazorPageOfT.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/acf1b6abd0c65bfb4dd378fac91ee884d46073faa6295340469651abdca69/PageModel.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/faf4a4b37056302738a46865827c3d2d3b6b1b977603a3932b0cd749921118/Controller.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Contexto/Class1.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -33,29 +56,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "vcs.Git",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "sqlserver.localdb",
-      "sqlserver"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlserver.localdb&quot;,
+      &quot;sqlserver&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.Web">
     <configuration name="Web" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Web/Web.csproj" />
@@ -98,7 +121,10 @@
       <updated>1665032087863</updated>
       <workItem from="1665032095858" duration="3929000" />
       <workItem from="1665071769287" duration="358000" />
-      <workItem from="1665085556205" duration="2277000" />
+      <workItem from="1665085556205" duration="4671000" />
+      <workItem from="1665090582576" duration="124000" />
+      <workItem from="1665100243912" duration="1682000" />
+      <workItem from="1665104127495" duration="9642000" />
     </task>
     <task id="LOCAL-00001" summary="initiaç commit">
       <created>1665032124287</created>
@@ -121,7 +147,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665087862718</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Ajusta Estrutura da aplicação">
+      <created>1665089044851</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1665089044851</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -146,6 +179,7 @@
     <MESSAGE value="initiaç commit" />
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="Adiciona Services" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adiciona Services" />
+    <MESSAGE value="Ajusta Estrutura da aplicação" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajusta Estrutura da aplicação" />
   </component>
 </project>

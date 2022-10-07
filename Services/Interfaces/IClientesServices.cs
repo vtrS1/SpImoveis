@@ -1,9 +1,10 @@
 using Dominio.Models;
+using Services.Extensions;
 using X.PagedList;
 
 namespace Services.Interfaces;
 
 public interface IClientesServices
 {
-    Task<IPagedList<Clientes>> ListarPaginado(int? pagina = 1, string parametroDeBusca = "");
+    PagedResult<Clientes> ListarClientes(string ParametrosDeBusca = "", int pagina = 1, int tamPagina = 10);
 }

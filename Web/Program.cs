@@ -1,14 +1,14 @@
 using Microsoft.EntityFrameworkCore;
 using Dominio.Contexto;
+using Services.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
+builder.Services.AddCustomServices();
 builder.Services.AddDbContext<SpContexto>
-(Options => Options.UseSqlServer(
-    "Data Source=DESKTOP-SPEQ2M5;Initial Catalog=spimoveis;Integrated Security=True;MultipleActiveResultSets=True;TrustServerCertificate=True"));
+(Options => Options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 
@@ -20,12 +20,17 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+builder.Services.AddRazorPages();
+
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
 
 app.UseAuthorization();
+
+app.MapRazorPages();
 
 app.MapControllerRoute(
     name: "default",

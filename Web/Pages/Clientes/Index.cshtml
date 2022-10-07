@@ -1,0 +1,93 @@
+@page
+@model Web.Pages.Clientes.Index
+
+
+<div class="m-lg-2">
+        <a asp-page="CriarUsuario" class="btn btn-info"><i class="fa fa-plus-circle fa-fw me-1"></i> Criar</a>
+    </div>
+
+<div class="card"/>
+<div class="p-4"/>
+<div id="allTab"/>
+<form method="get" action="@Url.Page("Index", new { })">
+    <!-- BEGIN input-group -->
+    <div class="input-group mb-4">
+        <div class="flex-fill position-relative">
+            <div class="input-group">
+                <input asp-for="ParametrosDeBusca" class="form-control ps-35px" placeholder="Buscar Usuario"/>
+                <div class="input-group-text position-absolute top-0 bottom-0 bg-none border-0" style="z-index: 1020;">
+                    <i class="fa fa-search opacity-5"></i>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-default rounded-0" type="submit">
+            <span class="d-none d-md-inline">Buscar</span>
+        </button>
+    </div>
+    <!-- END input-group -->
+</form>
+<div class="table-responsive">
+    <table class="table table-hover text-nowrap"/>
+    <thead>
+    <tr>
+        <th class="border-top-0 pt-0 pb-2">Codigo</th>
+        <th class="border-top-0 pt-0 pb-2">Nome</th>
+        <th class="border-top-0 pt-0 pb-2">Perfil</th>
+        <th class="border-top-0 pt-0 pb-2"></th>
+        <th class="border-top-0 pt-0 pb-2">Ações</th>
+
+
+    </tr>
+    </thead>
+    <tbody>
+</div>
+<tbody>
+@if (Model.Cliente.Results.Any())
+{
+    var i = 1;
+    @foreach (var usuario in Model.Cliente.Results)
+    {
+        <tr>
+            <td class="align-middle">@usuario.Telefone</td>
+            <td class="align-middle">@usuario.Nome</td>
+            <td class="align-middle">@usuario.Email</td>
+            <td class="align-middle"></td>
+            <td class="align-middle">
+                <a href="@Url.Page("Detalhes", new { UsuarioId = usuario.Id })" class="btn btn-outline-default rounded">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </td>
+
+
+        </tr>
+    }
+}
+else
+{
+    <tr>
+        <td colspan="5" class="text-center">Nenhum registro encontrado</td>
+    </tr>
+}
+</tbody>
+@if (Model.Cliente.Results.Any())
+{
+    <div class="d-md-flex align-items-center">
+
+        <ul class="pagination mb-2 justify-content-end">
+            @{ int p = 1; }
+            <li class="page-item @(Model.Cliente.CurrentPage == p ? "disabled" : "")">
+                <a class="page-link" href="@Url.Page("Index", new { pagina = p, Model.ParametrosDeBusca })">Anterior</a>
+            </li>
+            @for (var pagina = 1; p <= Model.Cliente.PageCount; pagina++)
+            {
+                <li class="page-item @(Model.Cliente.CurrentPage == pagina ? "active" : "")">
+                    <a class="page-link" href="@Url.Page("Index", new { pagina, Model.ParametrosDeBusca })">@pagina</a>
+                </li>
+                p++;
+            }
+            <li class="page-item @(Model.Cliente.PageCount == Model.Cliente.CurrentPage ? "disabled" : "")">
+                <a class="page-link" href="@Url.Page("Index", new { pagina = p - 1, Model.ParametrosDeBusca })">Próxima</a>
+            </li>
+        </ul>
+    </div>
+}
