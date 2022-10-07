@@ -1,10 +1,16 @@
 @page
 @model Web.Pages.Clientes.Index
 
+@{
+    ViewData["Title"] = "Gerenciar de Clientes";
+    ViewData["ShowHeaderAndSideBar"] = false;
+    ViewData["ContentClass"] = "app-content";
+}
+
 
 <div class="m-lg-2">
-        <a asp-page="CriarUsuario" class="btn btn-info"><i class="fa fa-plus-circle fa-fw me-1"></i> Criar</a>
-    </div>
+    <a asp-page="CriarCliente" class="btn btn-info"><i class="fa fa-plus-circle fa-fw me-1"></i> Adicionar Cliente </a>
+</div>
 
 <div class="card"/>
 <div class="p-4"/>
@@ -53,8 +59,11 @@
             <td class="align-middle">@usuario.Email</td>
             <td class="align-middle"></td>
             <td class="align-middle">
-                <a href="@Url.Page("Detalhes", new { UsuarioId = usuario.Id })" class="btn btn-outline-default rounded">
-                    <i class="fa fa-eye"></i>
+                <a type="button" class="btn btn-danger"
+                   onclick="handleActiveButton(this)"
+                   data-user-id="@usuario.Id"
+                   data-bs-toggle="modal" data-bs-target="#modalConfirmacaoAtivar">
+                    <i >x</i>
                 </a>
             </td>
 
@@ -74,7 +83,7 @@ else
     <div class="d-md-flex align-items-center">
 
         <ul class="pagination mb-2 justify-content-end">
-            @{ int p = 1; }
+            @{ int p = 10; }
             <li class="page-item @(Model.Cliente.CurrentPage == p ? "disabled" : "")">
                 <a class="page-link" href="@Url.Page("Index", new { pagina = p, Model.ParametrosDeBusca })">Anterior</a>
             </li>
@@ -90,4 +99,71 @@ else
             </li>
         </ul>
     </div>
+}
+<partial name="Partials/_ModalConfirmacaoAtivar"/>
+<partial name="Partials/_ModalConfirmacaoInativar"/>
+@section Scripts
+{
+    <script type="text/javascript">
+        function handleActiveButton (event){
+              var button = $(event)
+              var userId = $(button).data('user-id')
+              $("#modalConfirmacaoAtivar > div > div > div.modal-footer > button.btn.btn-primary")
+              .data("user-id",userId);
+        }
+         function handleInactivateButton (event){
+                              var button = $(event)
+                              var userId = $(button).data('user-id')
+                              $("#modalConfirmacaoInativar > div > div > div.modal-footer > button.btn.btn-primary")
+                              .data("user-id",userId);
+                        }
+        
+        function handleConfirmActive(event) {
+            
+           var btnConfirmar = $("#modalConfirmacaoAtivar > div > div > div.modal-footer > button.btn.btn-primary")
+           var btnCancelar = $("#modalConfirmacaoAtivar > div > div > div.modal-footer > button.btn.btn-secondary")
+          var button = $(event)
+          var postId = $(button).data('user-id');
+           
+          $.ajax(
+              {
+                url: `@Url.Page("Index", "Excluir")&usuarioId=${postId}`,
+                beforeSend: function (){
+                    btnConfirmar.html("<div class=\"spinner-grow spinner-grow-sm\"></div>")
+                    btnConfirmar.prop("disabled",true);
+                    btnCancelar.prop("disabled",true);
+                },
+                success: function () {location.reload()},
+                complete: function () {
+                    btnConfirmar.html("Confirmar")
+                    btnConfirmar.prop("disabled",false);
+                    btnCancelar.prop("disabled",false);
+                }
+              }); 
+        }
+        function handleConfirmInactivate(event) {
+                            
+                           var btnConfirmar = $("#modalConfirmacaoInativar > div > div > div.modal-footer > button.btn.btn-primary")
+                           var btnCancelar = $("#modalConfirmacaoInativar > div > div > div.modal-footer > button.btn.btn-secondary")
+                          var button = $(event)
+                          var postId = $(button).data('user-id');
+                           
+                          $.ajax(
+                              {
+                                url: `@Url.Page("Index", "Excluir")&usuarioId=${postId}`,
+                                beforeSend: function (){
+                                    btnConfirmar.html("<div class=\"spinner-grow spinner-grow-sm\"></div>")
+                                    btnConfirmar.prop("disabled",true);
+                                    btnCancelar.prop("disabled",true);
+                                },
+                                success: function () {location.reload()},
+                                complete: function () {
+                                    btnConfirmar.html("Confirmar")
+                                    btnConfirmar.prop("disabled",false);
+                                    btnCancelar.prop("disabled",false);
+                                }
+                              }); 
+                        }
+    </script>
+
 }

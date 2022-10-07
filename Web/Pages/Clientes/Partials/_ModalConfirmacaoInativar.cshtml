@@ -1,0 +1,21 @@
+@model Web.Pages.Clientes.Index;
+<!-- Modal Confirmação-->
+<div class="modal fade back" id="modalConfirmacaoInativar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Inativar</h5>
+            </div>
+            <div class="modal-body">
+                <p class="text-center"> Deseja Inativar esse usuário ?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                <button type="button" onclick="handleConfirmInactivate(this)" class="btn btn-primary">Confirmar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Fim Modal Confirmação-->
+
+

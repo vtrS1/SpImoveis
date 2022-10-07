@@ -1,0 +1,46 @@
+@page
+@model Web.Pages.Clientes.CriarCliente
+
+@{
+    ViewData["Title"] = "Criar Usuário";
+    ViewData["ShowHeaderAndSideBar"] = true;
+    ViewData["MainContainerClass"] = "app app-full-height";
+}
+
+<div class="register">
+    <!-- BEGIN register-content -->
+    <div class="register-content">
+        <form method="POST">
+            <h4 class="text-center">Criar Usuário</h4>
+            <p class="text-muted text-center">Preencha as informações abaixo para criar o acesso</p>
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="mb-3">
+                <label asp-for="NomeCompleto" class="form-label"></label> <span class="text-danger">*</span>
+                <input asp-for="NomeCompleto" class="form-control form-control-lg fs-15px" placeholder="Nome"/>
+                <span asp-validation-for="NomeCompleto" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="PadraoInteresse" class="form-label"></label> <span class="text-danger">*</span>
+                <input asp-for="PadraoInteresse" class="form-control form-control-lg fs-15px" placeholder="CPF"/>
+                <span asp-validation-for="PadraoInteresse" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Email" class="form-label"></label> <span class="text-danger">*</span>
+                <input asp-for="Email" class="form-control form-control-lg fs-15px" placeholder="exemplo@email.com"/>
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Telefone" class="form-label"></label> <span class="text-danger">*</span>
+                <input asp-for="Telefone" class="form-control form-control-lg fs-15px" placeholder="ex. (92) 98170-4683"/>
+                <span asp-validation-for="Telefone" class="text-danger"></span>
+            </div>
+          
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary btn-lg fs-15px fw-500 d-block w-100">Criar Conta</button>
+            </div>
+        </form>
+    </div>
+    <!-- END register-content -->
+</div>
+<!-- END reg

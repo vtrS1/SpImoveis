@@ -1,7 +1,10 @@
+using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Services.Extensions;
 using Services.Interfaces;
+using Dominio.Models;
+using Services.Dtos;
 
 namespace Web.Pages.Clientes;
 
@@ -15,8 +18,9 @@ public class Index : PageModel
      
     }
     [FromQuery] public string ParametrosDeBusca { get; set; } = ""; 
-    public int Pagina { get; set; } = 1;
+    [FromQuery]public int Pagina { get; set; } = 1;
     public PagedResult<Dominio.Models.Clientes> Cliente { get; set; }
+    
 
     
     public void OnGet()
@@ -31,4 +35,19 @@ public class Index : PageModel
             throw;
         }      
     }
+    
+    public async Task<IActionResult> OnGetExcluir([FromQuery]Guid UsuarioId)
+    {
+        try
+        {   await _clientes.ExcluirCliente(UsuarioId);
+            return new OkResult();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
+    }
+    
+    
 }
