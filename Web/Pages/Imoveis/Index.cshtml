@@ -1,8 +1,7 @@
 @page
-@model Web.Pages.Clientes.Index
-
+@model Web.Pages.Imoveis.Index
 @{
-    ViewData["Title"] = "Gerenciar de Clientes";
+    ViewData["Title"] = "Gerenciar de Imoveis";
     ViewData["ShowHeaderAndSideBar"] = false;
     ViewData["ContentClass"] = "app-content";
 }
@@ -36,11 +35,10 @@
     <table class="table table-hover text-nowrap"/>
     <thead>
     <tr>
-        <th class="border-top-0 pt-0 pb-2">Codigo</th>
-        <th class="border-top-0 pt-0 pb-2">Nome</th>
-        <th class="border-top-0 pt-0 pb-2">Perfil</th>
-        <th class="border-top-0 pt-0 pb-2"></th>
-        <th class="border-top-0 pt-0 pb-2">Ações</th>
+        <th class="border-top-0 pt-0 pb-2">Bairro</th>
+        <th class="border-top-0 pt-0 pb-2">Cidade</th>
+        <th class="border-top-0 pt-0 pb-2">Valor</th>
+       
 
 
     </tr>
@@ -48,15 +46,15 @@
     <tbody>
 </div>
 <tbody>
-@if (Model.Cliente.Results.Any())
+@if (Model.Imoveis.Results.Any())
 {
     var i = 1;
-    @foreach (var usuario in Model.Cliente.Results)
+    @foreach (var usuario in Model.Imoveis.Results)
     {
         <tr>
-            <td class="align-middle">@usuario.Telefone</td>
-            <td class="align-middle">@usuario.Nome</td>
-            <td class="align-middle">@usuario.Email</td>
+            <td class="align-middle">@usuario.Bairro</td>
+            <td class="align-middle">@usuario.Cidade</td>
+            <td class="align-middle">@usuario.Valor</td>
             <td class="align-middle"></td>
             <td class="align-middle">
                 <a type="button" class="btn btn-danger"
@@ -78,30 +76,30 @@ else
     </tr>
 }
 </tbody>
-@if (Model.Cliente.Results.Any())
+@if (Model.Imoveis.Results.Any())
 {
     <div class="d-md-flex align-items-center">
 
         <ul class="pagination mb-2 justify-content-end">
             @{ int p = 10; }
-            <li class="page-item @(Model.Cliente.CurrentPage == p ? "disabled" : "")">
+            <li class="page-item @(Model.Imoveis.CurrentPage == p ? "disabled" : "")">
                 <a class="page-link" href="@Url.Page("Index", new { pagina = p, Model.ParametrosDeBusca })">Anterior</a>
             </li>
-            @for (var pagina = 1; p <= Model.Cliente.PageCount; pagina++)
+            @for (var pagina = 1; p <= Model.Imoveis.PageCount; pagina++)
             {
-                <li class="page-item @(Model.Cliente.CurrentPage == pagina ? "active" : "")">
+                <li class="page-item @(Model.Imoveis.CurrentPage == pagina ? "active" : "")">
                     <a class="page-link" href="@Url.Page("Index", new { pagina, Model.ParametrosDeBusca })">@pagina</a>
                 </li>
                 p++;
             }
-            <li class="page-item @(Model.Cliente.PageCount == Model.Cliente.CurrentPage ? "disabled" : "")">
+            <li class="page-item @(Model.Imoveis.PageCount == Model.Imoveis.CurrentPage ? "disabled" : "")">
                 <a class="page-link" href="@Url.Page("Index", new { pagina = p - 1, Model.ParametrosDeBusca })">Próxima</a>
             </li>
         </ul>
     </div>
 }
-<partial name="Partials/_ModalConfirmacaoAtivar"/>
-<partial name="Partials/_ModalConfirmacaoInativar"/>
+<partial name=""/>
+<partial name=""/>
 @section Scripts
 {
     <script type="text/javascript">

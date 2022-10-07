@@ -23,4 +23,12 @@ public class Clientes
     public string? Telefone { get; set; }
     public string Email { get; set; }
     public string? PadraoInteresse { get; set; }
+    
+    public void AtualizarInformacoes(string nome, string padraoInteresse , string email, string telefone)
+    {
+        this.Nome = nome;
+        this.PadraoInteresse = padraoInteresse;
+        this.Email = email;
+        this.Telefone = telefone;
+    }
 }

@@ -11,4 +11,5 @@ public interface IClientesServices
     Task ExcluirCliente(Guid usuarioId);
     Task CriarCliente(CadastrarClienteDto cadastrarClienteDto);
     Task<Clientes> BuscarPorId(Guid id);
+    Task EditarCliente(Guid usuarioId);
 }

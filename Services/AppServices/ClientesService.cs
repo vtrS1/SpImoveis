@@ -47,6 +47,34 @@ public class ClientesService: IClientesServices
             throw;
         }
     }
+    public async Task EditarCliente(Guid usuarioId)
+    {
+        try
+        {
+            var cliente = await _spContexto.Clientes.FindAsync(usuarioId);
+
+            var cadastrarClienteDto = new CadastrarClienteDto(
+                cliente.Nome,
+                cliente.PadraoInteresse,
+                cliente.Email,
+                cliente.Telefone);
+            
+            cliente.AtualizarInformacoes(
+                cadastrarClienteDto.Nome,
+                cadastrarClienteDto.PadraoInteresse,
+                cadastrarClienteDto.Email,
+                cadastrarClienteDto.Nome);
+
+            _spContexto.Update(cliente);
+            await _spContexto.SaveChangesAsync();
+
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
+    }
 
     public async Task CriarCliente(CadastrarClienteDto clienteDto)
     {

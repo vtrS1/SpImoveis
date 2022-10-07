@@ -12,14 +12,11 @@ public static class ServiceCollectionExtension
     {
         serviceCollection.AddRazorPages();
         serviceCollection.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-
-        #region SpImovies
-
         serviceCollection.AddScoped<IClientesServices, ClientesService>();
+        serviceCollection.AddScoped<IImoveisServices, ImoveisServices>();
         
        
-
-        #endregion
+        
         
     }
 }

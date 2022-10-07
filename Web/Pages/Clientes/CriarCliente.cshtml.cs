@@ -14,7 +14,7 @@ public class CriarCliente : PageModel
     {
         _services = services;
     }
-    [Display(Name = "CPF ou CNPJ")]
+    [Display(Name = "Qual Padrão de Imovel deseja ?")]
     [BindProperty]
     public string PadraoInteresse { get; set; }
 
